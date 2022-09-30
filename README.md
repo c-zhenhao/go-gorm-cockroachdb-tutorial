@@ -16,6 +16,6 @@ For instructions on starting CockroachDB and running the code, see [this tutoria
 - need to setup CA cert
   - ![image](https://user-images.githubusercontent.com/16322250/193229111-52fd305e-7d6d-47cb-98f5-a527c84cc559.png)
   - enable SSL (since encryption is enabled (sslmode=verify-full) in connection string)
-- dont get scammed by Beekeeper's options parameters hints -- dont need
+- dont get scammed by Beekeeper's options parameters hints -- dont need `--cluster==`
   - <img width="618" alt="image" src="https://user-images.githubusercontent.com/16322250/193229227-58ec90a1-c97e-4dfb-b379-d367a870859d.png">
   - ![image](https://user-images.githubusercontent.com/16322250/193229665-ea33c587-1085-46c6-81f8-9167e6941d89.png)

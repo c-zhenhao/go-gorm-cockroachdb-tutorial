@@ -146,13 +146,13 @@ func main() {
 	// Delete all accounts created by the earlier call to `addAccounts`
 	// To handle potential transaction retry errors, we wrap the call
 	// to `deleteAccounts` in `crdbgorm.ExecuteTx`
-	if err := crdbgorm.ExecuteTx(context.Background(), db, nil,
-		func(tx *gorm.DB) error {
-			return deleteAccounts(db, acctIDs)
-		},
-	); err != nil {
-		// For information and reference documentation, see:
-		//   https://www.cockroachlabs.com/docs/stable/error-handling-and-troubleshooting.html
-		fmt.Println(err)
-	}
+	// if err := crdbgorm.ExecuteTx(context.Background(), db, nil,
+	// 	func(tx *gorm.DB) error {
+	// 		return deleteAccounts(db, acctIDs)
+	// 	},
+	// ); err != nil {
+	// 	// For information and reference documentation, see:
+	// 	//   https://www.cockroachlabs.com/docs/stable/error-handling-and-troubleshooting.html
+	// 	fmt.Println(err)
+	// }
 }

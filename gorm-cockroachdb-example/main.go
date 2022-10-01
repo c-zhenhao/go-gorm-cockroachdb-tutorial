@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
-	"os"
 	"time"
+
+	"gorm-cockroachdb-example/configs"
 
 	"github.com/cockroachdb/cockroach-go/v2/crdb/crdbgorm"
 	"github.com/google/uuid"
@@ -91,7 +92,8 @@ func deleteAccounts(db *gorm.DB, accountIDs []uuid.UUID) error {
 
 func main() {
 
-	db, err := gorm.Open(postgres.Open(os.Getenv("DATABASE_URL")+"&application_name=$ docs_simplecrud_gorm"), &gorm.Config{})
+	// db, err := gorm.Open(postgres.Open(os.Getenv("DATABASE_URL")+"&application_name=$ docs_simplecrud_gorm"), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(configs.DbURI()), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
 	}
